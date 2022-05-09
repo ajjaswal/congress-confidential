@@ -9,6 +9,18 @@ let selectBar = document.getElementById("select-bar");
 let bioBox = document.createElement("div");
 bioBox.classList = "board";
 
+// loads previous search from local storage
+function loadSearch() {
+    searches = JSON.parse(localStorage.getItem("searches")) || [];
+    for(i=0;i<searches.length;i++) {
+        let saveOption = document.createElement("Option");
+        saveOption.setAttribute("value", searches[i].id);
+        saveOption.textContent = searches[i].name;
+        searchSave.appendChild(saveOption);
+    }
+}
+
+
 
 // Displays reps biography and produces buttons for other functional displays
 function memberBio(id) {
@@ -151,3 +163,101 @@ function candSummary(id) {
 
 
 
+// Function to display reps in select box for a given state and chamber
+function displayReps(state, chamber) {
+    selectBar.removeChild(selectBar.lastChild);
+
+    let stateBox = document.createElement("div");
+    let selectBox = document.createElement("div");
+    let repSelect = document.createElement("select");
+    let nilOption = document.createElement("option");
+
+    stateBox.classList = "column is-offset-6";
+    selectBox.classList = "select is-danger is-rounded is-normal is-focused";
+    repSelect.setAttribute("id", "rep-select");
+    nilOption.setAttribute("value", "Select Member");
+    nilOption.textContent = "Select Member";
+
+    selectBar.appendChild(selectBox);
+    selectBox.appendChild(repSelect);
+    repSelect.appendChild(nilOption);
+
+    fetch(urlPP + chamber + "/" + state + "/current.json", {
+        method: "GET",
+        headers: {
+            "X-API-Key": apiKeyPP
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        for (i = 0; i < data.results.length; i++) {
+            let repOption = document.createElement("option");
+            repOption.setAttribute("value", data.results[i].id);
+            repOption.textContent = data.results[i].name;
+            repSelect.appendChild(repOption);
+        }
+        selectBox.addEventListener("change", (event) => {
+            if (event.target.value === "Select Member") {
+                location.reload();
+            } else {
+            saveSearch(event.target.value);
+            }
+        });
+    })
+}
+// Function to display chambeer select box after selecting state
+function displayChamber(state) {
+    selectBar.removeChild(selectBar.lastChild);
+
+    let chamberBox = document.createElement("div");
+    let selectDiv = document.createElement("div");
+    let chamberSelect = document.createElement("select");
+    let noOption = document.createElement("option");
+    let senateOption = document.createElement("option");
+    let houseOption = document.createElement("option");
+    
+    chamberBox.classList = "column is-offset-6";
+    selectDiv.classList = "select is-danger is-rounded is-normal is-focused";
+
+    chamberSelect.setAttribute("id", "chamber-select");
+    noOption.setAttribute("value", "Select Chamber");
+    senateOption.setAttribute("value", "senate");
+    houseOption.setAttribute("value", "house");
+
+    noOption.textContent = "Select Chamber";
+    senateOption.textContent = "Senate";
+    houseOption.textContent = "House of Representatives";
+
+    selectBar.appendChild(selectDiv);
+    selectDiv.appendChild(chamberSelect);
+    chamberSelect.appendChild(noOption);
+    chamberSelect.appendChild(senateOption);
+    chamberSelect.appendChild(houseOption);
+
+    selectDiv.addEventListener("change", (event) => {
+        if (event.target.value === "Select Chamber") {
+            location.reload();
+        } else {
+        displayReps(state, event.target.value);
+        }
+    })
+}
+
+loadSearch();
+
+// Event listeners for saved search and state selector
+searchSave.addEventListener('change', (event) => {
+    if (event.target.value === "Previous Searches") {
+        location.reload();
+    } else {
+    memberBio(event.target.value);
+    }
+});
+
+stateSelect.addEventListener('change', (event) => {
+    if (event.target.value === "Select State") {
+        location.reload();
+    } else {
+    displayChamber(event.target.value);
+    }
+});
