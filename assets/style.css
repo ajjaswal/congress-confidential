@@ -1,0 +1,21 @@
+#CC {
+    font-size: 60px;
+    font-family: cursive;
+    margin: top -30px;
+}
+
+.hero {
+    width: 100%;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.subtitle {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+#display {
+    background-image: ;
+}
