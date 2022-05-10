@@ -17,21 +17,22 @@
 
     <body class="container">
 
-        <!--Page Header-->
-        <div class="row text-center bg-primary text-white">
-            <h1>Congress Confidential</h1>
-        </div>
+        <!--Heri-->
+        <section class="hero is-danger is-dark">
+            <h1>Congress Confidential - View The Bios & Financial Information of Your Elected Officials</h1>
+        </section>
 
         <div class="row">
 
             <!--Dropdown Menus-->
             <div id="select-bar" class="column is-offset-3">
-                <div id="save-bar" class="select is-danger is-rounded is-normal is-focused">
+                <div id="save-bar" class="select is-danger is-normal is-focused">
                     <select id="search-save">
                         <option value="Previous Searches">Previous Searches</option>
                     </select>
                 </div>
-                <div id="state-select" class="select is-danger is-rounded is-normal is-focused">
+
+                <div id="state-select" class="select is-danger is-normal is-focused">
                     <select id="state">
                         <option value="Select State">Select State</option>
                         <option value="AL">Alabama</option>
@@ -88,8 +89,21 @@
                 </div>
             </div>
 
+            <!-- Flag image -->
+            <div id="flag-display">
+                <div id="display">
+                    <figure class="image is-64x64 is-inline-block"></figure>
+                    <img src="assets/american-flag.png">
+                </div>
+
+            <div id="data-display2">
+                <div id="display2"
+                <data></data>
+            </div> 
+
             <!--API Links-->
             <footer>
+                <figure class="image is-64x64 is-inline-block"></figure>
                 <div class="propublica-link">
                     <a href="https://projects.propublica.org/api-docs/congress-api/">ProPublica</a>
                 </div>

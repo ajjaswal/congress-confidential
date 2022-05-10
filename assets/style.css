@@ -17,5 +17,19 @@
 }
 
 #display {
-    background-image: ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
 }
+
+a {
+    font-size: relative;
+    font-style: italic;
+    margin-bottom: 20px;
+    display: block;
+    color: red;
+    text-align: center;
+}
+
+
