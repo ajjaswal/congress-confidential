@@ -6,8 +6,14 @@ let urlPP = "https://api.propublica.org/congress/v1/members/";
 let stateSelect = document.getElementById("state");
 let displayEl = document.getElementById("display");
 let selectBar = document.getElementById("select-bar");
+let voteDisplay = document.getElementById("vote-display");
+let voteBox = document.createElement("div");
 let bioBox = document.createElement("div");
+let searchSave = document.getElementById("search-save");
+var searches = [];
 bioBox.classList = "board";
+voteBox.classList = "column is-fluid is-danger board";
+voteBox.setAttribute("id", "vote-box");
 
 // loads previous search from local storage
 function loadSearch() {
@@ -20,9 +26,38 @@ function loadSearch() {
     }
 }
 
+// saves searched representive and populated select box
+function saveSearch(id) {
+    fetch(urlPP + id + ".json", {
+        method: "GET",
+        headers: {"X-API-Key": apiKeyPP}
+    }).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+
+    let memberId = data.results[0].id;
+    let firstName = data.results[0].first_name;
+    let lastName = data.results[0].last_name;
+    let fullName = firstName + " " + lastName;
+
+    let saveOption = document.createElement("Option");
+    saveOption.setAttribute("value", memberId);
+    saveOption.textContent = fullName;
+    searchSave.appendChild(saveOption);
+
+    searches.push({
+        id: memberId,
+        name: fullName
+    });
+ 
+    localStorage.setItem("searches", JSON.stringify(searches));
+    candSummary(memberId);
+    })
+}
 
 
-// Displays reps biography and produces buttons for other functional displays
+
+// Displays Member biography
 function memberBio(id) {
     fetch(urlPP + id + ".json", {
         method: "GET",
@@ -57,12 +92,21 @@ function memberBio(id) {
     urlLink.setAttribute("href", repUrl);
     urlLink.textContent = repUrl;
 
+    let financialBtn = document.createElement("button");
+    financialBtn.classList = "button is-danger is-rounded is-normal is-focused";
+    financialBtn.textContent = "Summary of Finacial Information";
+    financialBtn.addEventListener("click", (event) => {
+        candSummary(memberId);
+    });
+
 
     displayEl.appendChild(bioBox);
     bioBox.appendChild(repName);
     bioBox.appendChild(title);
     bioBox.appendChild(birthdate);
     bioBox.appendChild(urlLink);
+    bioBox.appendChild(financialBtn);
+    
 
     })
 }
@@ -104,13 +148,15 @@ function candSummary(id) {
                 let totalWords = document.createElement("p");
                 let total = document.createElement("p");
                 
+                
                 let returnBtn = document.createElement("button");
                 returnBtn.classList = "button is-danger is-rounded is-normal is-focused";
-                returnBtn.textContent = "Return to Representitive Bio";
+                returnBtn.textContent = "View Representitive Bio";
                 returnBtn.addEventListener("click", (event) => {
                     memberBio(id);
                 })
 
+                
                 box.className = "board";
                 container.className = "columns is-mobile";
                 column1.className = "column";
@@ -250,7 +296,7 @@ searchSave.addEventListener('change', (event) => {
     if (event.target.value === "Previous Searches") {
         location.reload();
     } else {
-    memberBio(event.target.value);
+        candSummary(event.target.value);
     }
 });
 
