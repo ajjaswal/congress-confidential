@@ -1,0 +1,35 @@
+#CC {
+    font-size: 60px;
+    font-family: cursive;
+    margin: top -30px;
+}
+
+.hero {
+    width: 100%;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.subtitle {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+#display {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+a {
+    font-size: relative;
+    font-style: italic;
+    margin-bottom: 20px;
+    display: block;
+    color: red;
+    text-align: center;
+}
+
+
