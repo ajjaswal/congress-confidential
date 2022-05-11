@@ -93,7 +93,7 @@ function memberBio(id) {
     urlLink.textContent = repUrl;
 
     let financialBtn = document.createElement("button");
-    financialBtn.classList = "button is-danger is-rounded is-normal is-focused";
+    financialBtn.classList = "button is-danger is-normal is-focused";
     financialBtn.textContent = "Summary of Finacial Information";
     financialBtn.addEventListener("click", (event) => {
         candSummary(memberId);
@@ -150,7 +150,7 @@ function candSummary(id) {
                 
                 
                 let returnBtn = document.createElement("button");
-                returnBtn.classList = "button is-danger is-rounded is-normal is-focused";
+                returnBtn.classList = "button is-danger is-normal is-focused";
                 returnBtn.textContent = "View Representitive Bio";
                 returnBtn.addEventListener("click", (event) => {
                     memberBio(id);
@@ -219,7 +219,7 @@ function displayReps(state, chamber) {
     let nilOption = document.createElement("option");
 
     stateBox.classList = "column is-offset-6";
-    selectBox.classList = "select is-danger is-rounded is-normal is-focused";
+    selectBox.classList = "select is-danger is-normal is-focused";
     repSelect.setAttribute("id", "rep-select");
     nilOption.setAttribute("value", "Select Member");
     nilOption.textContent = "Select Member";
@@ -263,7 +263,7 @@ function displayChamber(state) {
     let houseOption = document.createElement("option");
     
     chamberBox.classList = "column is-offset-6";
-    selectDiv.classList = "select is-danger is-rounded is-normal is-focused";
+    selectDiv.classList = "select is-danger is-normal is-focused";
 
     chamberSelect.setAttribute("id", "chamber-select");
     noOption.setAttribute("value", "Select Chamber");
