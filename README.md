@@ -1,3 +1,5 @@
+
+
 # congress-confidential
 
 The Congress Confidential app gives citizens access to their elected officials bios and financial information with the tap of the screen or click of a button.
@@ -33,3 +35,7 @@ Deployed:
 GitHub:
 
 SCREENSHOT:
+
+# Project Description
+
+## Table of Contents
