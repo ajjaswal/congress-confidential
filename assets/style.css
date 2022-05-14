@@ -1,13 +1,14 @@
 #CC {
     font-size: 55px;
     font-family: cursive;
-    margin: top -50px;
+    margin: top -30px;
 }
 
 .hero {
     width: 100%;
     padding: 5px;
     margin: 0 auto;
+
 }
 
 .subtitle {
@@ -23,8 +24,80 @@
     padding: 30px;
 }
 
-a {
+/*a {
     font-size: relative;
+    font-style: italic;
+    margin-bottom: 20px;
+    display: block;
+    color: red;
+    text-align: center;
+}*/
+
+#state-box {
+    margin: 30px;
+    display: inline-block;
+    border: solid red;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    color: black;
+    text-align: center;
+    background-color: rgb(255, 240, 247);
+    font-size: 14px;
+    justify-content: center;
+}
+
+#select-bar {
+    align-items: center;
+}
+
+.columns {
+    width: 100%;
+}
+
+.board {
+    border: solid red;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: auto;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(255, 240, 247);
+    font-size: 14px;
+}
+
+.cycle {
+    font-size: 18px;
+}
+
+.button {
+    width: auto;
+}
+
+.rep-name {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 22px;
+    color: rgb(15, 33, 136);
+}
+
+h2 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.name {
+    text-align: center;
+}
+
+a {
+    font-size: larger;
     font-style: italic;
     margin-bottom: 20px;
     display: block;
@@ -32,4 +105,24 @@ a {
     text-align: center;
 }
 
+#subtitle {
+    font-style: italic;
+    margin-bottom: 8.5px;
+}
 
+#subtitleTwo {
+    margin-bottom: -24.5px;
+}
+
+#results-box {
+    margin: auto;
+    border: solid red;
+    padding: 10px;
+    border-radius: 10px;
+    width: 600px;
+    color: black;
+    text-align: center;
+    background-color: rgb(255, 240, 247);
+    font-size: 14px;
+    justify-content: center;
+}
