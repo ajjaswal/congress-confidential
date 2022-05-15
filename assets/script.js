@@ -75,7 +75,11 @@ function memberBio(id) {
     let lastName = data.results[0].last_name;
     let party = data.results[0].current_party;
     let repUrl = data.results[0].url;
-    let fullName = firstName + " " + lastName + " (" + party + ")"
+    let fullName = firstName + " " + lastName + " (" + party + ")";
+    let memberPicture = "https://raw.githubusercontent.com/unitedstates/images/gh-pages/congress/225x275/" + memberId + ".jpg";
+
+    var img = document.createElement('img');
+    img.src = memberPicture;
     
     let repName = document.createElement("h1");
     repName.className = "rep-name";
