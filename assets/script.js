@@ -105,7 +105,7 @@ function memberBio(id) {
 
 
     displayEl.appendChild(bioBox);
-    bioBox.appendChild(repName);
+    bioBox.appendChild(img);
     bioBox.appendChild(title);
     bioBox.appendChild(birthdate);
     bioBox.appendChild(urlLink);
