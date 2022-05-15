@@ -1,6 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,25 +12,30 @@
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
 
-    <body class="container">
+    <!--Hero-->
+    <section class="hero is-small is-link">
+        <div class="container">
+            <div class="hero-body">
+                <p id="CC" class="title is-danger has-text-centered">
+                    Congress Confidential
+                </p>
+                <p id="subtitle" class="subtitle has-text-centered is-size-4">
+                    Get The Facts
+                </p>
+                <p id="subtitleTwo" class="has-text-centered is-size-5">
+                    View The Bio's & Financial Information of Your Members of Congress
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <!--Heri-->
-        <section class="hero is-danger is-dark">
-            <h1>Congress Confidential - View The Bios & Financial Information of Your Elected Officials</h1>
-        </section>
+    <div class="container">
 
         <div class="row">
 
             <!--Dropdown Menus-->
-            <div id="select-bar" class="column is-offset-3">
-                <div id="save-bar" class="select is-danger is-normal is-focused">
-                    <select id="search-save">
-                        <option value="Previous Searches">Previous Searches</option>
-                    </select>
-                </div>
+            <div id="select-bar" class="column is-offset-3">                
 
                 <div id="state-select" class="select is-danger is-normal is-focused">
                     <select id="state">
@@ -94,27 +100,31 @@
                     <figure class="image is-64x64 is-inline-block"></figure>
                     <img src="assets/american-flag.png">
                 </div>
+            </div>
+            <!-- Search History -->
+            <div class="column is-offset-5">
+              <div id="save-bar" class="select is-danger is-normal is-focused is-centered">
+                <select id="search-save">
+                  <option value="Previous Searches">Previous Searches</option>
+                </select>
+              </div>
+            </div>
+        </div>
+        
+    </div>
+    <!--API Links-->
+    <footer class="footer has-background-link">
+        <div class="propublica-link">
+            <a class="firstApi" href="https://projects.propublica.org/api-docs/congress-api/">ProPublica</a>
+        </div>
 
-            <div id="data-display2">
-                <div id="display2"
-                <data></data>
-            </div> 
+        <div class="opensecrets-link">
+            <a class="secondApi" href="https://www.opensecrets.org/open-data/api">OpenSecrets</a>
+        </div>
+        </div>
+    </footer>
 
-            <!--API Links-->
-            <footer>
-                <figure class="image is-64x64 is-inline-block"></figure>
-                <div class="propublica-link">
-                    <a href="https://projects.propublica.org/api-docs/congress-api/">ProPublica</a>
-                </div>
+    <script src="./assets/script.js"></script>
+</body>
 
-                <div class="opensecrets-link">
-                    <a href="https://www.opensecrets.org/open-data/api">OpenSecrets</a>
-                </div>
-
-            </footer>
-
-            <script src="./assets/script.js"></script>
-    </body>
-
-    </html>
-     
+</html>

@@ -65,8 +65,6 @@ function memberBio(id) {
     }).then(function (response) {
         return response.json();
     }).then(function (data) {
-
-
     displayEl.innerHTML = "";
     bioBox.innerHTML = "";
         
