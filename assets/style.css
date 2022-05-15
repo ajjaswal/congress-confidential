@@ -96,13 +96,22 @@ h2 {
     text-align: center;
 }
 
-a {
+.firstApi {
     font-size: larger;
     font-style: italic;
     margin-bottom: 20px;
     display: block;
     color: red;
-    text-align: center;
+    text-align: left;
+}
+
+.secondApi {
+    font-size: larger;
+    font-style: italic;
+    margin-bottom: 20px;
+    display: block;
+    color: red;
+    text-align: right;
 }
 
 #subtitle {
@@ -125,4 +134,73 @@ a {
     background-color: rgb(255, 240, 247);
     font-size: 14px;
     justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+
+    .board {
+        width: 100%;
+    }
+
+    .board.button {
+
+        width: auto;
+    }
+
+    .column {
+        display: inline-block;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .board {
+        width: 100%;
+
+    }
+
+    .board.button {
+        width: auto;
+    }
+
+    .column {
+        display: inline-block;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .board {
+        width: 100%;
+    }
+
+    .board.button {
+        width: 90%;
+    }
+
+    .board .column {
+        display: inline-block;
+    }
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .board {
+        width: 100%;
+    }
+
+    .board.button {
+        width: 90%;
+    }
+
+    .board .column {
+        display: inline-block;
+
+    }
+
 }
