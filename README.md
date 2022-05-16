@@ -30,6 +30,9 @@ ACCEPTANCE CRITERIA:
 GIVEN I want to view, by state, publicly available records of elected members of the U.S. Congress
 WHEN I click the buttons THEN make a selection from the list of states THEN choose the branch of government, THEN the name of the representative WHEN I am then presented with 2 cards that display their biographical information as well as their publicly availale financial records. WHEN I am finished I can save my search history if desired, by entering my email in the appropriate box and clicking Save to save them to local storage where they can be retrieved at a later date. WHEN I view on different sized screens THEN I am presented with a responsive layout that accomodates the changing screen size.
 
-LINKS: 
+
+## Links
+
 Deployed:  https://ajjaswal.github.io/congress-confidential/
+
 GitHub: https://github.com/ajjaswal/congress-confidential
